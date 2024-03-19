@@ -16,13 +16,9 @@ services:
       dockerfile: docker/Dockerfile.local
     command: air
     volumes:
-      - ../.:/app/
+      - ../.:/app/:rw
     ports:
       - '1323:1323'
-    environment:
-      - GOOSE_DRIVER=postgres
-      - GOOSE_DBSTRING=postgresql://postgres:postgres@golang-echo-api-db:5432/postgres
-      - GOOSE_MIGRATION_DIR=db/migrations
     env_file:
       - ../.env
 
