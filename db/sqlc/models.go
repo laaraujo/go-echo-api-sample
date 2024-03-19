@@ -14,4 +14,11 @@ type Exercise struct {
 	Sets      int16            `json:"sets"`
 	Reps      int16            `json:"reps"`
 	CreatedAt pgtype.Timestamp `json:"created_at"`
+	RoutineID int32            `json:"routine_id"`
+}
+
+type Routine struct {
+	ID        int32            `json:"id"`
+	Name      string           `json:"name"`
+	CreatedAt pgtype.Timestamp `json:"created_at"`
 }

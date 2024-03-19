@@ -10,10 +10,16 @@ import (
 
 type Querier interface {
 	CreateExercise(ctx context.Context, arg CreateExerciseParams) (Exercise, error)
+	CreateRoutine(ctx context.Context, name string) (Routine, error)
 	DeleteExercise(ctx context.Context, id int32) error
+	DeleteRoutine(ctx context.Context, id int32) error
 	GetExercise(ctx context.Context, id int32) (Exercise, error)
+	GetRoutine(ctx context.Context, id int32) (Routine, error)
 	ListExercises(ctx context.Context) ([]Exercise, error)
+	ListRoutineExercises(ctx context.Context, routineID int32) ([]Exercise, error)
+	ListRoutines(ctx context.Context) ([]Routine, error)
 	UpdateExercise(ctx context.Context, arg UpdateExerciseParams) error
+	UpdateRoutine(ctx context.Context, arg UpdateRoutineParams) error
 }
 
 var _ Querier = (*Queries)(nil)
