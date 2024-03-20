@@ -60,3 +60,20 @@ $ make sqlc/generate
 ```sh
 $ make stop
 ```
+
+## Production Docker image
+
+If you want to test your Docker image:
+
+```sh
+# Build your image
+$ docker build -f docker/Dockerfile -t golang-echo-api .
+```
+
+```sh
+# Replace the corresponding env vars and run it!
+$ docker run -p 8000:<PORT> -e PORT=<PORT> -e DATABASE_URL=<database_url> -e API_KEY=<api_key> golang-echo-api
+```
+
+* If you want to use your local DB to test this build you can use [host.docker.internal](https://docs.docker.com/desktop/networking/#use-cases-and-workarounds) in your database url env var parameter (i.e. `-e DATABASE_URL=postgresql://postgres:postgres@host.docker.internal:5432/postgres`)
+
