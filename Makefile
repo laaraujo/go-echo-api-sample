@@ -10,7 +10,7 @@ help:
 	@echo down            : remove local containers
 	@echo run             : spin local containers up
 	@echo stop            : stop local containers
-	@echo goose/create    : create a new migration file (with a default name, to be renamed)
+	@echo goose/create    : create a new migration file with a default name, to be renamed
 	@echo goose/validate  : validate migration files
 	@echo goose/migrate   : run migrations on local container
 	@echo goose/rollback  : rollback latest applied migration on local container
