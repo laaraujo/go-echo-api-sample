@@ -44,5 +44,8 @@ goose/migrate:
 goose/rollback:
 	goose -dir $(migrations_dir) down
 
+goose/reset:
+	goose -dir $(migrations_dir) reset
+
 sqlc/generate:
 	sqlc generate
