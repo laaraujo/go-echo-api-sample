@@ -8,7 +8,6 @@ Sample API project made with Golang and Echo
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 
 ## Overview
 
