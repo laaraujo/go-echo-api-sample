@@ -8,6 +8,7 @@ Sample Rest API project I made while learning some Go and [Echo](https://echo.la
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Production Docker image](#production-docker-image)
 
 ## Overview
 
