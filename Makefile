@@ -17,6 +17,7 @@ help:
 	@echo sqlc/generate   : generate go queries/models with sqlc 
 
 setup:
+	cp .env.example .env
 	go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
 	go install github.com/pressly/goose/v3/cmd/goose@latest
 
