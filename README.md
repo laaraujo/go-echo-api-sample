@@ -1,6 +1,6 @@
 # Golang Echo API
 
-Sample API project made with Golang and Echo
+Sample Rest API project I made while learning some Go and [Echo](https://echo.labstack.com/)
 
 ## Table of Contents
 
@@ -15,10 +15,10 @@ This project intends to serve as a template to kickstart Go API development with
 
 ## Features
 
-- Database schema and migrations with [Goose]()
-- Type-safe SQL interfaces with [sqlc]()
-- Local development setup with [Docker](), [Docker Compose](), [Make]()
-- Live reload with [Air]() in [Docker]()
+- Database schema and migrations with [Goose](https://pressly.github.io/goose/)
+- Type-safe SQL interfaces with [sqlc](https://sqlc.dev/)
+- Local development setup with [Docker](https://www.docker.com/), [Docker Compose](https://docs.docker.com/compose/), [Make](https://www.gnu.org/software/make/manual/make.html)
+- Live reload with [Air](https://github.com/cosmtrek/air) in [Docker](https://www.docker.com/)
 - Very basic placeholder auth middleware with API_KEY
 
 ## Installation
