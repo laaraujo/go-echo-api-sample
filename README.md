@@ -9,6 +9,7 @@ Sample Rest API project I made while learning some Go and [Echo](https://echo.la
 - [Installation](#installation)
 - [Usage](#usage)
 - [Production Docker image](#production-docker-image)
+- [License](#license)
 
 ## Overview
 
@@ -78,3 +79,6 @@ $ docker run -p 8000:<PORT> -e PORT=<PORT> -e DATABASE_URL=<database_url> -e API
 
 * If you want to use your local DB to test this build you can use [host.docker.internal](https://docs.docker.com/desktop/networking/#use-cases-and-workarounds) in your database url env var parameter (i.e. `-e DATABASE_URL=postgresql://postgres:postgres@host.docker.internal:5432/postgres`)
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
