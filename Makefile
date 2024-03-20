@@ -1,7 +1,9 @@
 api_container = api
-local_db_url = postgresql://postgres:postgres@localhost:5432/postgres
 migrations_dir = db/migrations
 compose_cmd = docker compose -f docker/compose.yml
+
+export GOOSE_DRIVER=postgres
+export GOOSE_DBSTRING=postgresql://postgres:postgres@localhost:5432/postgres
 
 help:
 	@echo build           : build local docker setup
@@ -11,7 +13,7 @@ help:
 	@echo goose/create    : create a new migration file (with a default name, to be renamed)
 	@echo goose/validate  : validate migration files
 	@echo goose/migrate   : run migrations on local container
-	@echo goose/rollbal   : rollback latest applied migration on local container
+	@echo goose/rollback  : rollback latest applied migration on local container
 	@echo sqlc/generate   : generate go queries/models with sqlc 
 
 setup:
@@ -34,13 +36,13 @@ goose/create:
 	goose -dir $(migrations_dir) create rename_this_file sql
 
 goose/status:
-	goose -dir $(migrations_dir) postgres "$(local_db_url)" status
+	goose -dir $(migrations_dir) status
 
 goose/migrate:
-	goose -dir $(migrations_dir) postgres "$(local_db_url)" up
+	goose -dir $(migrations_dir) up
 
 goose/rollback:
-	goose -dir $(migrations_dir) postgres "$(local_db_url)" down
+	goose -dir $(migrations_dir) down
 
 sqlc/generate:
 	sqlc generate
