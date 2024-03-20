@@ -27,6 +27,12 @@ func (app *App) CreateExercise(c echo.Context) error {
 		log.Println(err)
 		return echo.NewHTTPError(http.StatusInternalServerError)
 	}
+
+	if _, err := app.Queries.GetRoutine(cc, e.RoutineID); err != nil {
+		log.Println(err)
+		return echo.NewHTTPError(http.StatusNotFound, "Routine not found")
+	}
+
 	exercise, err := app.Queries.CreateExercise(cc, *e)
 	if err != nil {
 		log.Println(err)
@@ -69,6 +75,11 @@ func (app *App) UpdateExercise(c echo.Context) error {
 	if err := c.Bind(exercise); err != nil {
 		log.Println(err)
 		return echo.NewHTTPError(http.StatusBadRequest)
+	}
+
+	if _, err := app.Queries.GetRoutine(cc, exercise.RoutineID); err != nil {
+		log.Println(err)
+		return echo.NewHTTPError(http.StatusNotFound, "Routine not found")
 	}
 
 	if err := app.Queries.UpdateExercise(cc, *exercise); err != nil {
